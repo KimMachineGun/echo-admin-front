@@ -42,6 +42,8 @@ export default {
     this.$http.get(this.path.specPath)
     .then((res) => {
       this.spec = res.data
+
+      this.getRows(res.data[0].structName)
     })
     .catch((err) => {
       console.log(err)
